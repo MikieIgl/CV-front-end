@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.readAsDataURL(file);
   });
 
-  // Кнопка сброса 
+  // Кнопка сброса резюме
   const resetResume = () => {
     if (confirm("Вы точно хотите сбросить резюме и удалить все изменения?")) {
       localStorage.clear();

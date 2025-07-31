@@ -1,0 +1,941 @@
+:root {
+  --primary: #4285f4;
+  --secondary: #34a853;
+  --text: #333;
+  --light: #f5f5f5;
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--text);
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  width: 595px;
+  height: 842px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 20px;
+  top: 15px;
+  left: 20px;
+}
+
+/* Изображение профиля */
+.profile-img {
+  position: relative;
+  width: 124px;
+  height: 124px;
+  border-radius: 12px;
+  background: url("../assets/icons/profile.png") center center / cover no-repeat;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.profile-img:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Всплывающая подсказка загрузки фотографии профиля*/
+.profile-img::after {
+  content: "Загрузить фото";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.profile-img:hover::after {
+  opacity: 1;
+}
+
+/* Блок с именем и ролью */
+.name-box {
+  display: flex;
+  flex-direction: column;
+  width: 124px;
+  height: 124px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.text-wrapper {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.your-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.name {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 14.6px;
+}
+
+.position {
+  position: relative;
+  align-self: stretch;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #5c5c5c;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+/* Блок с языками */
+.lenguages-box {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  height: 124px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.div {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.list-lenguages {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.name-lenguage {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 10.4px;
+  white-space: nowrap;
+}
+
+.text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 10.4px;
+  white-space: nowrap;
+}
+
+.level-lenguage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.div-2 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 11px;
+  background-color: #28d979;
+  border-radius: 3px;
+}
+
+.english-progress-bar {
+  position: relative;
+  width: 129px;
+  height: 11px;
+  background-color: #28d979;
+  border-radius: 3px;
+}
+
+/* Блок с опытом работы */
+.experience-box {
+  display: flex;
+  flex-direction: column;
+  width: 411px;
+  height: 359px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.job-list {
+  gap: 10px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: -2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.last-job {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #27d879;
+  border-radius: 10px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.date {
+  color: #ffffff;
+  font-size: 8px;
+  line-height: 12px;
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.tag {
+  display: flex;
+  width: 61px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 2px 0px;
+  position: relative;
+  background-color: #7e731266;
+  border-radius: 59px;
+}
+
+.text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #dcf063;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12.4px;
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.job-info {
+  width: 124px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.about-job {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0px 6px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: -2px;
+}
+
+.text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ebf9f1;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.featured-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.points {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.job {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.date-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.info {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #3f3d3d;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.p {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.company-name {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #3f3c3c;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.text-wrapper-7 {
+  color: #000000;
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.point-item {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+}
+
+.point-item:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+.point-item-black {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+}
+
+.point-item-black::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: black;
+}
+
+/* Инструменты */
+.tools-box {
+  position: relative;
+  width: 124px;
+  height: 359px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.frame {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: absolute;
+  top: 40px;
+  left: 24px;
+}
+
+.content-2 {
+  width: 76px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.name-title-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.div-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Образование */
+.education-box {
+  display: flex;
+  flex-direction: column;
+  width: 268px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.content-5 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-right: -4px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.column {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.last-education {
+  width: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #27d879;
+  border-radius: 10px;
+}
+
+.vector-16 {
+  position: relative;
+  width: 11px;
+  height: 9.39px;
+}
+
+.content-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  width: 100%;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0px 2px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: -2px;
+}
+
+.tag-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ebf9f1;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.school-name {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  width: 116px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.text-wrapper-9 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.tag-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #148f63;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.tag-6 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #148f63;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.school-name-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+/* Дополнительная секция */
+.extra-box {
+  display: inline-flex;
+  flex-direction: column;
+  height: 289px;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.interests-box {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.content-7 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 8px;
+  align-self: stretch;
+  width: 100%;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.name-wrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 10px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 40px;
+}
+
+.name-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.input {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 10px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 40px;
+  border: none;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  background-color: #000000;
+  border-radius: 12px;
+}
+
+.title-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.name-title {
+  align-self: stretch;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 21px;
+  position: relative;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  letter-spacing: 0;
+}
+
+.title-3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.name-title-2 {
+  width: fit-content;
+  font-weight: 400;
+  color: #dddddd;
+  font-size: 10px;
+  line-height: 15px;
+  white-space: nowrap;
+  position: relative;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  letter-spacing: 0;
+}
+
+/* Кнопка загрузки резюме*/
+.download-btn {
+  display: block;
+  width: 200px;
+  margin: 30px auto;
+  padding: 12px 20px;
+  background-color: #34a853;
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #33d649;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Контент для редактирования */
+[contenteditable="true"] {
+  outline: 1px dashed rgba(66, 133, 244, 0.5);
+  padding: 2px 4px;
+  border-radius: 3px;
+  min-height: 1em;
+}
+
+[contenteditable="true"]:focus {
+  outline: 2px solid var(--primary);
+  background-color: rgba(66, 133, 244, 0.1);
+}
+@media(min-width: 768px) and (max-width: 1024px) {
+    .middle {
+        width: 96%;
+    }
+    .bottom {
+        width: 96%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 12px;
+    }
+}

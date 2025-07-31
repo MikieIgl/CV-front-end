@@ -2,7 +2,8 @@
 document.addEventListener("click", function (e) {
   if (
     e.target.hasAttribute("contenteditable") ||
-    e.target.classList.contains("download-btn")
+    e.target.classList.contains("download-btn") ||
+    e.target.classList.contains("reset-button")
   ) {
     const btn = e.target;
     const ripple = document.createElement("span");

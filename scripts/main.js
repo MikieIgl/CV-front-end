@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileDiv = document.getElementById("profileImage");
   const uploadInput = document.getElementById("uploadImage");
 
-  // Если ранее было сохранено фото — загружаем его
   const savedImage = localStorage.getItem("profile-photo");
   if (savedImage) {
     profileDiv.style.backgroundImage = `url(${savedImage})`;
@@ -77,9 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.readAsDataURL(file);
   });
 
+  // Кнопка сброса 
+  const resetResume = () => {
+    if (confirm("Вы точно хотите сбросить резюме и удалить все изменения?")) {
+      localStorage.clear();
+      location.reload();
+    }
+  };
+
+  const resetButton = document.getElementById("reset-resume");
+  if (resetButton) {
+    resetButton.addEventListener("click", resetResume);
+  }
+
   loadSavedData();
   initEditableFields();
 });
-
-// Инициализация
-window.addEventListener("load", adjustContainerScale);

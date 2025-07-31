@@ -1,3 +1,4 @@
+/*
 cv-final-work/
 ├── index.html          # Основной HTML-файл
 ├── styles/
@@ -10,3 +11,4 @@ cv-final-work/
 ├── assets/
 │   └── icons/          # Иконки (png, svg)
 └── README.md           # Описание проекта
+*/

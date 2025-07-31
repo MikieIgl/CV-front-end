@@ -8,11 +8,6 @@ document
     // Клонируем содержимое
     const clone = sourceElement.cloneNode(true);
 
-    // Удаляем интерактивные элементы
-    clone
-      .querySelectorAll("[contenteditable], .download-btn")
-      .forEach((el) => el.remove());
-
     // Вставляем клон в скрытый контейнер, чтобы отрендерить
     const hiddenContainer = document.createElement("div");
     hiddenContainer.style.position = "fixed";
